@@ -1,0 +1,45 @@
+@import '../../utilities/colors';
+
+.search-results-container{
+    padding-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__input{
+           width: 40%; 
+           outline: none;
+           border: none;
+           border-radius: 5px;
+           padding: 0.7rem;
+           background-color: $darkest-purple;
+           color: $light-color;
+           box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+        &__btn{
+            margin-top: 1rem;
+            padding: 0.7rem 1rem;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: $light-green;
+            &:hover{
+                background-color: $light-green--hover;
+                cursor: pointer;
+            }
+        }
+    }
+    .results-container{
+        width: 60%;
+        background-color: $darkest-purple;
+        margin-top: 3rem;
+        color: $light-color;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        
+    }
+}

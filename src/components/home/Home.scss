@@ -1,0 +1,14 @@
+@import '../../utilities/colors';
+
+
+.home-container{
+    background-color: $dark-purple;
+    width:100%;
+    min-height: 100vh;
+    &__heading{
+        text-align: center;
+        color:$light-color;
+        padding-top: 2rem;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,13 @@
+.home-container {
+  background-color: #5C164E;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.home-container__heading {
+  text-align: center;
+  color: #E2FCEF;
+  padding-top: 2rem;
+  font-weight: 700;
+}
+/*# sourceMappingURL=Home.css.map */
