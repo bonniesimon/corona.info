@@ -46,10 +46,14 @@ const SearchResults = () => {
         e.preventDefault();
         // const data = getApiData();
         // setDetails(data);
+        if(!value || !dataSet){
+            console.log("State not present");
+            return;
+        }
         Object.keys(dataSet).map(country =>  {
             if(country.toLowerCase() === value.toLowerCase()){
-                console.log(dataSet[country].slice(-1)[0].recovered);
-                 setCountryDetails(dataSet[country]);
+                console.log(dataSet[country].slice(-1)[0]);
+                setCountryDetails(dataSet[country].slice(-1)[0]);
             }
           });
         
@@ -74,16 +78,16 @@ const SearchResults = () => {
                  />
                 <button className="search-results-container__form__btn">Search</button>
             </form>
-            {countryDetails !== undefined ? 
+            {!countryDetails ? 
             <div className="results-container">
             <h3 className="results-container__heading">India</h3>
             <div className="results-container__row1">
                 <div className="col col">
-                    <p className="large">{dataSet.confirmed ? dataSet.confirmed : 396}</p>
+                    <p className="large">396</p>
                     <p className="small small--yellow">Confirmed</p>
                 </div>
                 <div className="col col">
-                    <p className="large">{countryDetails.slice(-1)[0].recovered === undefined ? 27: countryDetails.slice(-1)[0].recovered } </p>
+                    <p className="large">{countryDetails.recovered}</p>
                     <p className="small small--green">Recovered</p>                    
                 </div>
                 <div className="col col">
