@@ -37,3 +37,13 @@
     }
     
 }
+
+@media (max-width: 767px){
+    .search-results-container{
+        &__form{
+            &__input{
+                width:60%;
+            }
+        }
+    }
+}

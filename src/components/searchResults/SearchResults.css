@@ -54,4 +54,10 @@
   background-color: #80d64b;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .search-results-container__form__input {
+    width: 60%;
+  }
+}
 /*# sourceMappingURL=SearchResults.css.map */
