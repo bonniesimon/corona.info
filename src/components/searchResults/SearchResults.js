@@ -12,24 +12,26 @@ const SearchResults = () => {
                 <button className="search-results-container__form__btn">Search</button>
             </form>
             <div className="results-container">
-                <h3 className="resuts-container__heading">India</h3>
-                <div className="resutls-container__row1">
-                    <div className="col1">
+                <h3 className="results-container__heading">India</h3>
+                <div className="results-container__row1">
+                    <div className="col col">
                         <p className="large">396</p>
-                    <p className="small">Confirmed</p>
+                        <p className="small small--yellow">Confirmed</p>
                     </div>
-                    <div className="col2">
+                    <div className="col col">
                         <p className="large">27</p>
-                    <p className="small">Recovered</p>                    
+                        <p className="small small--green">Recovered</p>                    
                     </div>
-                    <div className="col3">
+                    <div className="col col">
                         <p className="large">7</p>
-                    <p className="small">Deaths</p>                    
+                        <p className="small small--red">Deaths</p>                    
                     </div>
                 </div>
-                <div className="resutls-container__row">
-                    <p className="large">0.2</p>
-                    <p className="small">Growth Rate</p>
+                <div className="results-container__row2">
+                    <div className="col">
+                        <p className="large">0.2</p>
+                        <p className="small">Growth Rate</p>
+                    </div>
                 </div>
             </div>
         </div>
