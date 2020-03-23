@@ -45,3 +45,11 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 767px){
+    .results-container{
+        &__row1{
+            flex-direction: column;
+        }
+    }
+}
