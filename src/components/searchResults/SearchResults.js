@@ -3,68 +3,50 @@ import React, {useState, useEffect} from 'react';
 //CSS
 import './SearchResults.css';
 
-// //Apollo
-// import ApolloClient from 'apollo-boost';
-// import {gql} from 'apollo-boost';
-
-
-// const client = new ApolloClient({
-//     uri: 'https://covid19-graphql.now.sh/',
-// });
-
-
-
-
+//Children
+import Result from "../result/Result";
 
 
 
 const SearchResults = () => {
     const [value, setValue] = useState('');
     const [dataSet, setDataSet] = useState({});
-    const [countryDetails, setCountryDetails] = useState([]);
 
 
     /**
      * TODO: get data from api and return json data from this function. 
      * @param : countryName
      */
-    const getApiData = async () => {
-        const results = await fetch('https://pomber.github.io/covid19/timeseries.json');
+    const getApiData = async (country) => {
+        const results = await fetch(`https://coronavirus-19-api.herokuapp.com/countries/${country}`);
         const data = await results.json();
         console.log(data);
         setDataSet(data);
-        // return {country:'india', confirmed:'376', recovered:'27', death:'7', growthRate:'0.2'};
+        
     }
 
     const updateValue = (e) => {
         const textInput = e.target.value;
-        console.log(textInput)
+        // console.log(textInput)
         setValue(textInput);
     }
 
     const formSubmit = (e) => {
         e.preventDefault();
-        // const data = getApiData();
-        // setDetails(data);
-        if(!value || !dataSet){
-            console.log("State not present");
+        if(!value){
+            console.log("No Search input!!");
             return;
         }
-        Object.keys(dataSet).map(country =>  {
-            if(country.toLowerCase() === value.toLowerCase()){
-                console.log(dataSet[country].slice(-1)[0]);
-                setCountryDetails(dataSet[country].slice(-1)[0]);
-            }
-          });
+        getApiData(value.toLowerCase());
         
     }
 
     /**
      * *Runs first time the page loads
      */
-    useEffect(() => {
-        getApiData();
-    }, [])
+    // useEffect(() => {
+    //     getApiData();
+    // }, [])
 
     return (
         <div className="search-results-container" >
@@ -78,34 +60,7 @@ const SearchResults = () => {
                  />
                 <button className="search-results-container__form__btn">Search</button>
             </form>
-            {!countryDetails ? 
-            <div className="results-container">
-            <h3 className="results-container__heading">India</h3>
-            <div className="results-container__row1">
-                <div className="col col">
-                    <p className="large">396</p>
-                    <p className="small small--yellow">Confirmed</p>
-                </div>
-                <div className="col col">
-                    <p className="large">{countryDetails.recovered}</p>
-                    <p className="small small--green">Recovered</p>                    
-                </div>
-                <div className="col col">
-                    <p className="large">7</p>
-                    <p className="small small--red">Deaths</p>                    
-                </div>
-            </div>
-            <div className="results-container__row2">
-                <div className="col">
-                    <p className="large">0.2</p>
-                    <p className="small">Growth Rate</p>
-                </div>
-            </div>
-        </div>
-        :
-        <h1>Hello WOrld</h1>
-        }
-            
+            <Result data={dataSet}/>
         </div>
     )
 }
