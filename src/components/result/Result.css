@@ -18,7 +18,11 @@
 }
 
 .results-container__heading {
+  margin: 0 auto;
+  width: 40%;
   text-align: center;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #9B287B;
 }
 
 .results-container__row1 {
@@ -71,6 +75,10 @@
 }
 
 @media (max-width: 767px) {
+  .results-container {
+    width: 90%;
+    min-height: 40vh;
+  }
   .results-container__row1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
