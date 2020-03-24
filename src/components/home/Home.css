@@ -2,6 +2,7 @@
   background-color: #5C164E;
   width: 100%;
   min-height: 100vh;
+  padding-bottom: 2rem;
 }
 
 .home-container__heading {

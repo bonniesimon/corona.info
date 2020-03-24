@@ -3,6 +3,8 @@
 .results-container{
     width: 60%;
     min-height: 50vh;
+    //marginbottom to push footer down
+    margin-bottom: 2rem;
     background-color: $darkest-purple;
     margin-top: 3rem;
     color: $light-color;

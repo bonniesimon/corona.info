@@ -1,0 +1,30 @@
+:root{
+    --light-color: #E2FCEF;
+    --light-green: #66DF1B;
+    --light-purple: #9B287B;
+}
+
+
+.App{
+    min-height: 100vh;
+}
+
+.footer{
+    height: 2rem;
+    margin-top: -2rem;
+    text-align: center;
+}
+
+.footer__text{
+    color:var(--light-purple);
+}
+
+.footer__link{
+    /* text-decoration: none; */
+    /* color: var(--light-color); */
+    color: var(--light-purple);
+}
+
+.footer__link:hover{
+    color:var(--light-green);
+}

@@ -5,6 +5,8 @@
     background-color: $dark-purple;
     width:100%;
     min-height: 100vh;
+    //padding-bottom to make footer stick
+    padding-bottom: 2rem;
     &__heading{
         text-align: center;
         color:$light-color;

@@ -1,6 +1,7 @@
 .results-container {
   width: 60%;
   min-height: 50vh;
+  margin-bottom: 2rem;
   background-color: #402039;
   margin-top: 3rem;
   color: #E2FCEF;
