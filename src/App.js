@@ -11,7 +11,7 @@ function App() {
 		<div className="App">
 			<Home/>
             <footer className="footer">
-                <p className="footer__text">Created by <a className="footer__link" href="github.com/bonniesimon">Bonnie Simon</a>. <a className="footer__link" href="github.com/bonniesimon/corona.info">Repo</a> </p>
+                <p className="footer__text">Created by <a className="footer__link" href="https://github.com/bonniesimon" target="_blank">Bonnie Simon</a>. <a className="footer__link" href="https://github.com/bonniesimon/corona.info" target="_blank">Repo</a> </p>
             </footer>
 		</div>
 	);
