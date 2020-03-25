@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: vremenagrotesk
+font link: https://www.fontspring.com/fonts/abstrkt/vremena?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=vremena-grotesk#firstfreeproduct
+font author: ABSTRKT
+font author site: 
+Slogan Font: Snickles.ttf
+
+icon designer: Ben Davis
+icon designer link: /smashicons
+        
+
+fontColor: {"hex":"#402039"}
+bgColor: {"hex":"#9B287B"}
+iconColor: {"hex":"#402039"}
+sloganColor: {"hex":"#E2FCEF"}
+      

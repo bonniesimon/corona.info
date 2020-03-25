@@ -1,3 +1,8 @@
+:root{
+    --dark-purple:#5C164E;
+    --light-purple:#9B287B;
+}
+
 *{
   margin:0;
   padding: 0;
@@ -9,6 +14,20 @@ body {
   font-family: 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*Following doesnt work for chrome*/
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background:var(--dark-purple);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--light-purple);
 }
 
 code {
