@@ -37,7 +37,11 @@ const Graph = () => {
         console.log(dataSet)
         setDataSetGraph(dataSet);
     }
+    
 
+    /*
+    *TODO : Remove react-vis with chartjs  https://www.youtube.com/watch?v=A5KaLpqzRi4
+     */
 
 
     return (
@@ -50,21 +54,24 @@ const Graph = () => {
                 xType="ordinal"
                 width={900}
                 height={500}>
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
-                    <XAxis title="Period of time(year and quarter)" />
-                    <YAxis title="Number of pull requests (thousands)" />
+                    {/* <VerticalGridLines /> */}
+                    {/* <HorizontalGridLines /> */}
+                    <XAxis title="Period of time" />
+                    <YAxis title="Fatalities" />
                         <LineMarkSeries
                             data={dataSetGraph}
                             color="#9B287B"
                             curve={'curveMonotoneX'}
+                            onSeriesMouseIn={(e) => {
+                                console.log(e.target.value)
+                            }}
                             />
                     {/* <VerticalBarSeries
-                        barWidth='0.8'
+                        
                         data={dataSetGraph}
                         color="#9B287B"
                         onSeriesMouseOut={(event)=>{
-                            console.log(event.value)
+                            console.log(event.target.value)
                           }}
                     /> */}
                 </XYPlot>
