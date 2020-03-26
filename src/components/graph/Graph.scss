@@ -1,26 +1,32 @@
-@import '../../utilities/colors';
+@import './../../utilities/colors';
+// @import "./../../../node_modules/react-vis/dist/style";
 
 
-.home-container{
-    background-color: $dark-purple;
-    width:calc(100% - 5rem);
+.graph-container{
     min-height: 100vh;
-    //for the navbar
+    //for Navbar
+    width: calc(100% - 5rem);
     margin-left: 5rem;
-    //padding-bottom to make footer stick
-    padding-bottom: 2rem;
+
+    background-color: $dark-purple;
     &__heading{
         text-align: center;
         color:$light-color;
         padding-top: 2rem;
         font-weight: 700;
     }
+    &__graph-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
 //change max width according to the one in Navbar component
 @media only screen and (max-width: 600px){
-    .home-container{
+    .graph-container{
         margin-top: 5rem;
         margin-left: 0;
         width: 100%;

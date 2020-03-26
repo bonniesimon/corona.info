@@ -1,0 +1,35 @@
+.graph-container {
+  min-height: 100vh;
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+  background-color: #5C164E;
+}
+
+.graph-container__heading {
+  text-align: center;
+  color: #E2FCEF;
+  padding-top: 2rem;
+  font-weight: 700;
+}
+
+.graph-container__graph-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .graph-container {
+    margin-top: 5rem;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Graph.css.map */
