@@ -1,14 +1,18 @@
 import React,{useState, useEffect} from 'react'
 
-import {XYPlot, YAxis, XAxis, HorizontalGridLines, VerticalGridLines,LineMarkSeries, VerticalBarSeries, LineSeries } from 'react-vis';
+// import {XYPlot, YAxis, XAxis, HorizontalGridLines, VerticalGridLines,LineMarkSeries, VerticalBarSeries, LineSeries } from 'react-vis';
+import {Line} from 'react-chartjs-2';
 
 //CSS
 import './Graph.css';
 import './../../../node_modules/react-vis/dist/style.css'
 
-
+/*
+*<Graph/> Component
+ */
 const Graph = () => {
-    const [dataSetGraph, setDataSetGraph] = useState([]);
+    const [dataSetGraph, setDataSetGraph] = useState({});
+    const [chartData, setchartData] = useState({});
 
 
     useEffect(() => {
@@ -26,18 +30,40 @@ const Graph = () => {
     /**@params : dataArr :: Array of Objects*/
     const extractDataForGraph = (dataArr) => {
         let dataSet = [];
+        let yAxisData = [];
+        let xAxisData = [];
         dataArr.forEach(day => {
-            console.log(day.confirmed)
+            
             if(day.confirmed !== 0){
-                dataSet.push({x:day.date, y:day.confirmed});
-                // console.log(day.date);
+                // dataSet.push({x:day.date, y:day.confirmed});
+                xAxisData.push(day.date);
+                yAxisData.push(day.confirmed);
+                console.log(day);
             }
             
         })  
-        console.log(dataSet)
-        setDataSetGraph(dataSet);
+        setDataSetGraph({x:xAxisData, y:yAxisData});
+        
+        // setDataSetGraph(dataSet);
+
     }
     
+
+    const chart = () => {
+        setchartData({
+            labels:dataSetGraph.x,
+            datasets: [
+                {
+                    label:'Fatalities',
+                    data:dataSetGraph.y,
+                }
+            ]
+        })
+    }
+
+    useEffect(() => {
+        chart();
+    }, [dataSetGraph])
 
     /*
     *TODO : Remove react-vis with chartjs  https://www.youtube.com/watch?v=A5KaLpqzRi4
@@ -49,32 +75,14 @@ const Graph = () => {
             <h1 className="graph-container__heading">Curve</h1>
 
             <div className="graph-container__graph-wrapper">
-                <XYPlot
-                stackBy="x"
-                xType="ordinal"
-                width={900}
-                height={500}>
-                    {/* <VerticalGridLines /> */}
-                    {/* <HorizontalGridLines /> */}
-                    <XAxis title="Period of time" />
-                    <YAxis title="Fatalities" />
-                        <LineMarkSeries
-                            data={dataSetGraph}
-                            color="#9B287B"
-                            curve={'curveMonotoneX'}
-                            onSeriesMouseIn={(e) => {
-                                console.log(e.target.value)
-                            }}
-                            />
-                    {/* <VerticalBarSeries
-                        
-                        data={dataSetGraph}
-                        color="#9B287B"
-                        onSeriesMouseOut={(event)=>{
-                            console.log(event.target.value)
-                          }}
-                    /> */}
-                </XYPlot>
+                <Line 
+                    data={chartData} 
+                    options={{
+
+                        responsive: true,
+                    }
+                    }
+                />
             </div>
         </div>
     )
