@@ -29,7 +29,7 @@ const Graph = () => {
 
     /**@params : dataArr :: Array of Objects*/
     const extractDataForGraph = (dataArr) => {
-        let dataSet = [];
+        // let dataSet = [];
         let yAxisData = [];
         let xAxisData = [];
         dataArr.forEach(day => {
@@ -38,7 +38,7 @@ const Graph = () => {
                 // dataSet.push({x:day.date, y:day.confirmed});
                 xAxisData.push(day.date);
                 yAxisData.push(day.confirmed);
-                console.log(day);
+                // console.log(day);
             }
             
         })  
@@ -54,8 +54,15 @@ const Graph = () => {
             labels:dataSetGraph.x,
             datasets: [
                 {
-                    label:'Fatalities',
+                    label:'Confirmed',
                     data:dataSetGraph.y,
+                    backgroundColor:[
+                        '#9B287B'
+                    ],
+                    borderWidth:2,
+                    // fill:false,
+                    borderColor:'#9B287B'
+
                 }
             ]
         })
@@ -72,14 +79,13 @@ const Graph = () => {
 
     return (
         <div className="graph-container">
-            <h1 className="graph-container__heading">Curve</h1>
-
+            <h1 className="graph-container__heading">Curve(India)</h1>
             <div className="graph-container__graph-wrapper">
                 <Line 
                     data={chartData} 
                     options={{
-
                         responsive: true,
+                        
                     }
                     }
                 />

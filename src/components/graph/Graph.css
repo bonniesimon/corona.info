@@ -13,7 +13,9 @@
 }
 
 .graph-container__graph-wrapper {
-  width: 100%;
+  width: 75%;
+  margin: 2rem auto 0 auto;
+  padding-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,6 +32,9 @@
     margin-top: 5rem;
     margin-left: 0;
     width: 100%;
+  }
+  .graph-container__graph-wrapper {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=Graph.css.map */
