@@ -78,7 +78,7 @@
   width: 100%;
 }
 
-.logo .nav-lik {
+.logo .nav-link {
   width: 100%;
 }
 
@@ -100,18 +100,22 @@
   .navbar {
     top: 0;
     width: 100vw;
-    height: 5rem;
+    height: 3rem;
   }
   .navbar .navbar-nav {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .navbar .navbar-nav .logo {
     display: none;
   }
   .navbar .navbar-nav .nav-link {
+    height: 3rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

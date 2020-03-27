@@ -69,7 +69,7 @@
     font-size: 1.2rem;
     letter-spacing: 0.3ch;
     width: 100%;
-    .nav-lik {
+    .nav-link {
         width: 100%;
     }
     svg{
@@ -91,15 +91,18 @@
         // bottom: 0;
         top: 0;
         width: 100vw;
-        height: 5rem;
+        height: 3rem;
         .navbar-nav{
             flex-direction: row;
-            // justify-content: center
+            // justify-content: center;
+            align-items: center;
             .logo{
                 display: none;
             }
             .nav-link{
+                height: 3rem;
                 justify-content: center;
+                
             }
         }
     }
