@@ -7,4 +7,4 @@ Inspired by https://corona-status.live/ ;
 
 ![Corona.info Demo](src/images/gifs/demo.gif)
 
-Made using React using Hooks.
+Made using React using Hooks and chart.js.
